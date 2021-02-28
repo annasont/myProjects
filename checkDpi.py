@@ -55,10 +55,11 @@ def moveFilesOkForPrint():
 
     print('\nFiles big enough for print moved to the new folder "OkForPrint".')
 
-# path = r'C:\Users\annaso\Desktop\aktualne\test\focie'
-# widthInPrint = 10
-# heightInPrint = 10
-# dpi = 300
+
+# path = 
+# widthInPrint = 
+# heightInPrint = 
+# dpi = 
 
 # checkFiles(path, widthInPrint, heightInPrint, dpi)
 # moveFilesOkForPrint()
