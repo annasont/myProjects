@@ -1,3 +1,4 @@
+#! /usr/bin/python3
 '''downloadPKD.py: on Tuesdays to Fridays downloads current PKD reports as Excel spreadsheets and moves them to the chosen folder.
 On Mondays downloads in addition reports from Saturday and Sunday.'''
 
