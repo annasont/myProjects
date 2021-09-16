@@ -44,7 +44,7 @@ def checkFiles(path, widthInPrint, heightInPrint, dpi):
 
 def moveFilesOkForPrint():
     # Creates folder "OkForPrint" and moves files that match requirements to this folder 
-    okForPrint = checkFiles(path, widthInPrint, heightInPrint, dpi)
+    okForPrint = checkFiles(path, width, height, dpi)
     newFolder = os.path.join(path, "OkForPrint")
     os.makedirs(newFolder, exist_ok=True)
     
@@ -56,10 +56,10 @@ def moveFilesOkForPrint():
     print('\nFiles big enough for print moved to the new folder "OkForPrint".')
 
 
-# path = 
-# widthInPrint = 
-# heightInPrint = 
-# dpi = 
+path = r'C:\Users\annaso\Desktop\aktualne\Migranorsk Alfa\bildebaser'
+width = 8
+height = 5
+dpi = 300
 
-# checkFiles(path, widthInPrint, heightInPrint, dpi)
+checkFiles(path, width, height, dpi)
 # moveFilesOkForPrint()

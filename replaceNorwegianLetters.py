@@ -1,5 +1,5 @@
-'''replaceNorwegianLetters.py replaces norwegian letters æ, ø, å, Æ, Ø, Å with ae, o, a, AE, O, A
-in all files and subfolders in given forlder tree. '''
+'''replaceNorwegianLetters.py replaces Norwegian letters æ, ø, å, Æ, Ø, Å with ae, o, a, AE, O, A
+in all files and subfolders in given folder tree. '''
 import os
 
 def replaceLowerØ(text):
