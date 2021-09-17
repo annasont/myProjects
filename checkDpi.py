@@ -59,9 +59,6 @@ def moveFilesOkForPrint():
 
     print('\nFiles big enough for print moved to the new folder "OkForPrint".')
 
-
-# moveFilesOkForPrint()
-
 if __name__ == "__main__":
     print('Path to the folder with images:')
     path = input()
