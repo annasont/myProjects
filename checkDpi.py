@@ -31,14 +31,18 @@ def checkFiles(path, widthInPrint, heightInPrint, dpi):
                 # if image not big enough, calculating maximum size of an image in print, in order to maintain given quality.
                 maxWidth = round(sourceImageWidth / dpi * 2.54)
                 maxHeight = round(sourceImageHeight / dpi * 2.54)
-                text = '%s: max width of %s cm; max height of %s cm' % (filename, maxWidth, maxHeight)
+                text = f'{filename}: max width of {maxWidth} cm; max height of {maxHeight} cm'
                 notOkForPrint.append(text)
-    print('\nFiles ok for print:')
-    for filename in okForPrint:
-        print(filename)
-    print('\nNot ok for print. In order to print in %s dpi use following maximum sizes:' % dpi)
-    for item in notOkForPrint:
-        print(item)
+    
+    if notOkForPrint != []:
+        print(f'\nIn order to print following images in {dpi} dpi use following maximum sizes:')
+        for item in notOkForPrint:
+            print(item)
+    
+    if okForPrint != []:
+        print('\nFiles ok for print:')
+        for filename in okForPrint:
+            print(filename)
 
     return okForPrint
 
@@ -56,10 +60,27 @@ def moveFilesOkForPrint():
     print('\nFiles big enough for print moved to the new folder "OkForPrint".')
 
 
-path = r'C:\Users\annaso\Desktop\aktualne\Migranorsk Alfa\bildebaser'
-width = 8
-height = 5
-dpi = 300
-
-checkFiles(path, width, height, dpi)
 # moveFilesOkForPrint()
+
+if __name__ == "__main__":
+    print('Path to the folder with images:')
+    path = input()
+    print('Width of an image in cm in a target place:')
+    width = int(input())
+    print('Height of an image in cm in a target place:')
+    height = int(input())
+    print('Dpi value (e.g. 300 for printed materials):')
+    dpi = int(input())
+    okForPrint = checkFiles(path, width, height, dpi)
+
+    if okForPrint != []:
+        print('Do you want to move OK images to the new folder? Type "Yes" or "No":')
+        answer = input().lower()
+        if answer == 'yes':
+            moveFilesOkForPrint()
+            print('Files moved successfully')
+        elif answer == 'no':
+            print("Ok, we're done!")
+        else:
+            print('Something went wrong. Try again.')
+
