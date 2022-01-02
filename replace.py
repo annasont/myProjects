@@ -25,7 +25,11 @@ try:
     while True:
         for filename in os.listdir(path):
             if characters in filename:
-                newName = replace(filename)
+                if '.' in filename:
+                    name, extension = filename.split('.')
+                    newName = '.'.join([replace(name), extension])
+                else:
+                    newName = replace(filename)
                 rename(path, filename, newName)
         characters, newCharacters = showToUser()
 except FileNotFoundError:

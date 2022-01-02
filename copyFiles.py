@@ -28,4 +28,4 @@ if __name__ == '__main__':
 
 
 
-# check: dlaczego kilka razy przechodzi przez te same pliki? 
+
